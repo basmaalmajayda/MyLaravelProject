@@ -2,13 +2,6 @@
 <html lang="en">
 
 <head>
-    
-    <meta charset="utf-8">
-    <title>DotCom - Creative Agency Website Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -23,7 +16,9 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    
+
 </head>
 
 <body>
@@ -31,18 +26,29 @@
 <div class="container-fluid nav-bar p-0">
         <div class="container-lg p-0">
             <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
-                <a href="index.html" class="navbar-brand">
-                    <h1 class="m-0 text-white display-4"><span class="text-primary">D</span>ot<span class="text-primary">C</span>om</h1>
+                <a href="{{URL::to('/')}}" class="navbar-brand">
+                    <h1 class="m-0 text-white display-4"><span class="text-primary">@lang('lang.d')</span>@lang('lang.ot')<span class="text-primary">@lang('lang.c')</span>@lang('lang.om')</h1>
                 </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <a class="nav-item nav-link" href="{{URL::to('/lang/' . 'en')}}">@lang('lang.en')</a>
+                <a class="nav-item nav-link" href="{{URL::to('/lang/' . 'ar')}}">@lang('lang.ar')</a>
+                
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    
+                    <form class="example" method="post" action="{{URL::to('/searchService')}}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">  
+                    <input type="text" style="font-size:14px;" placeholder="@lang('lang.search')" name="name">
+                    <button type="submit" style="height: 44px; width:37px;"><i class="fa fa-search"></i></button>
+                    </form>
+
+                    <a class="nav-item nav-link"></a>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="{{URL::to('/')}}" class="nav-item nav-link active">Home</a>
-                        <a href="{{URL::to('/about')}}" class="nav-item nav-link">About</a>
-                        
-                        <a href="{{URL::to('/contact')}}" class="nav-item nav-link">Contact</a>
+                        <a href="{{URL::to('/')}}" class="nav-item nav-link">@lang('lang.home')</a>
+                        <a href="{{URL::to('/service')}}" class="nav-item nav-link">@lang('lang.services')</a>
+                        <a href="{{URL::to('/blog')}}" class="nav-item nav-link">@lang('lang.blogs')</a>
+                        <a href="{{URL::to('/about')}}" class="nav-item nav-link">@lang('lang.about')</a>
+                        <a href="{{URL::to('/contact')}}" class="nav-item nav-link">@lang('lang.contact')</a>
+                        <a href="{{URL::to('/login')}}" class="nav-item nav-link active login">@lang('lang.login')</a>
                     </div>
                 </div>
             </nav>
@@ -57,9 +63,9 @@
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="m-0 mt-n2 text-white display-4"><span class="text-primary">D</span>ot<span class="text-primary">C</span>om</h1>
+                    <h1 class="m-0 mt-n2 text-white display-4"><span class="text-primary">@lang('lang.d')</span>@lang('lang.ot')<span class="text-primary">@lang('lang.c')</span>@lang('lang.om')</h1>
                 </a>
-                <p>Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
+                <p>@lang('lang.whiteFooter')</p>
                 <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -68,29 +74,29 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h5 class="font-weight-bold text-primary mb-4">Quick Links</h5>
+                <h5 class="font-weight-bold text-primary mb-4">@lang('lang.quick')</h5>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Services</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Pricing</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Contact Us</a>
+                    <a class="text-white mb-2" href="{{URL::to('/index')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.home')</a>
+                    <a class="text-white mb-2" href="{{URL::to('/service')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.services')</a>
+                    <a class="text-white mb-2" href="{{URL::to('/blog')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.blogs')</a>
+                    <a class="text-white mb-2" href="{{URL::to('/about')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.aboutFooter')</a>
+                    <a class="text-white" href="{{URL::to('/contact')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.contactFooter')</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h5 class="font-weight-bold text-primary mb-4">Popular Links</h5>
+                <h5 class="font-weight-bold text-primary mb-4">@lang('lang.popular')</h5>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Services</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Pricing</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Contact Us</a>
+                <a class="text-white mb-2" href="{{URL::to('/index')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.home')</a>
+                <a class="text-white mb-2" href="{{URL::to('/service')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.services')</a>
+                <a class="text-white mb-2" href="{{URL::to('/blog')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.blogs')</a>
+                <a class="text-white mb-2" href="{{URL::to('/about')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.aboutFooter')</a>
+                <a class="text-white" href="{{URL::to('/contact')}}"><i class="fa fa-angle-right text-primary mr-2"></i>@lang('lang.contactFooter')</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h5 class="font-weight-bold text-primary mb-4">Get In Touch</h5>
-                <p>Dolor clita stet nonumy clita diam vero, et et ipsum diam labore</p>
-                <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>123 Street, New York, USA</p>
+                <h5 class="font-weight-bold text-primary mb-4">@lang('lang.touch')</h5>
+                <p>@lang('lang.address')</p>
+                <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>@lang('lang.street')</p>
                 <p><i class="fa fa-phone-alt text-primary mr-2"></i>+012 345 67890</p>
                 <p><i class="fa fa-envelope text-primary mr-2"></i>info@example.com</p>
             </div>
@@ -98,15 +104,15 @@
     </div>
     <div class="container-fluid py-4 px-sm-3 px-md-5">
         <p class="m-0 text-center">
-            &copy; <a class="font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed by
-            <a class="font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a>
+            &copy; <a class="font-weight-semi-bold" href="{{URL::to('/')}}">@lang('lang.logo')</a>. @lang('lang.rights')
+            
         </p>
     </div>
     <!-- Footer End -->
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-up"></i></a>
+    <a href="{{URL::to('/')}}" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-up"></i></a>
 
 
     <!-- JavaScript Libraries -->

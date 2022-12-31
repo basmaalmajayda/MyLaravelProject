@@ -5,6 +5,49 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid rgb(255, 255, 255);
+  float: left;
+  width: 80%;
+  background: #ffffff;
+}
+.login{
+  font-size: 18px;
+}
+form.example button {
+  font-family: Arial;
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #FDAC53;
+  color: white;
+  font-size: 17px;
+  border: 1px solid #FDAC53;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #fd9322;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -34,12 +77,6 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: "Raleway", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 
 html {
