@@ -13,23 +13,11 @@ class TeamController extends Controller
 
     public function showTeam(){
         $teams = Team::select('*')->withTrashed()->paginate(5);
-		// foreach($teams as $team){
-		// 	$img_link = Storage::url($team->img);
-		// 	$team->img = $img_link;
-		// }
         return view('admin.teamTable')->with('teams', $teams);
     }
 
     public function storeTeam(TeamRequest $request){
-		
-        // $img = $request->file('img');
-    	// $path = 'public/team_images/';
-    	// $name = time().'_'.rand(1,10000).'.'.$img->getClientOriginalExtension();
-    	// Storage::disk('local')->put($path.$name, file_get_contents($img));
-
 		$team = new Team;
-		// $path = $request->file('img')->store('public/team_images');
-    	// $fileName = basename($path);
 
 		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('team_images'), $filename);
@@ -54,15 +42,9 @@ class TeamController extends Controller
     }
 
     public function updateTeam(TeamRequest $request){
-        // $img = $request->file('img');
-    	// $path = 'public/team_images/';
-    	// $name = time().'_'.rand(1,10000).'.'.$img->getClientOriginalExtension();
-    	// Storage::disk('local')->put($path.$name, file_get_contents($img));
-
     	$team = Team::find($request->id);
 
-		// $path = $request->file('img')->store('public/team_images');
-    	// $fileName = basename($path);
+		unlink(public_path( $team->img));
 
 		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('team_images'), $filename);
@@ -72,7 +54,6 @@ class TeamController extends Controller
 		$team->name_ar = $request->name_ar;
     	$team->job = $request->job;
 		$team->job_ar = $request->job_ar;
-    	//$team->img = $fileName;
     	$status = $team->save();
 		return redirect()->back()->with('status', $status);
     }

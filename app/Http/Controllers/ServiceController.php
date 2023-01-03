@@ -15,27 +15,11 @@ class ServiceController extends Controller
 
     public function showServices(){
         $services = Service::select('*')->withTrashed()->paginate(5);
-		// foreach($services as $service){
-		// 	$img_link = Storage::url($service->img);
-		// 	$service->img = $img_link;
-		// }
         return view('admin.serviceTable')->with('services', $services);
     }
 
     public function storeService(ServiceRequest $request){
-        // $img = $request->file('img');
-    	// $path = 'public/service_images/';
-    	// $name = time().'_'.rand(1,10000).'.'.$img->getClientOriginalExtension();
-    	// Storage::disk('local')->put($path.$name, file_get_contents($img));
-
-		// $img = $request['img'];
-        // $name = time().'.'.$img->getClientOriginalExtension();
-        // $destinationPath = public_path('public/img/');
-        // $img->move($destinationPath, $name);
-
 		$service = new Service;
-		// $path = $request->file('img')->store('public/service_images');
-    	// $fileName = basename($path);
 
 		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('service_images'), $filename);
@@ -47,7 +31,6 @@ class ServiceController extends Controller
 		$service->title_ar = $request->title_ar;
 		$service->description = $request->description;
 		$service->description_ar = $request->description_ar;
-    	//$service->img = $fileName;
 	    $status = $service->save();
     	return redirect()->back()->with('status', $status);
     }
@@ -62,21 +45,12 @@ class ServiceController extends Controller
     }
 
     public function updateService(ServiceRequest $request){
-        // $img = $request->file('img');
-    	// $path = 'public/service_images/';
-    	// $name = time().'_'.rand(1,10000).'.'.$img->getClientOriginalExtension();
-    	// Storage::disk('local')->put($path.$name, file_get_contents($img));
 		$service = Service::find($request->id);
+		unlink(public_path( $service->img));
 		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('service_images'), $filename);
 		$service->img = 'service_images/' . $filename;
 
-		// $service = Service::find($request->id);
-		// $path = $request->file('img')->store('public/service_images');
-    	// $fileName = basename($path);
-		// $service->img = $fileName;
-
-		//$service->img = $path.$name;
 		$service->name = $request->name;
 		$service->name_ar = $request->name_ar;
     	$service->title = $request->title;
