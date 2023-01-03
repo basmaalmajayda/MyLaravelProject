@@ -13,7 +13,7 @@
                         </div>
                     @endif
                     You are logged in!
-                    <a href="dashboard">
+                    <a href="{{URL::to('/dashboard')}}">
                         <button style="margin-left:440px; ">Go to Dashboard</button>
                     </a>
                 </div>

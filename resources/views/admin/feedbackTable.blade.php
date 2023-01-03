@@ -21,8 +21,6 @@
             <th>Name</th>
             <th>Profession</th>
             <th>Message</th>
-            <th>Created</th>
-            <th>Deleted</th>
             <th></th>
           </tr>
           </thead>
@@ -36,12 +34,7 @@
             <td data-label="Name">{{$feedback->name}}</td>
             <td data-label="Company">{{$feedback->profession}}</td>
             <td data-label="Company">{{$feedback->message}}</td>
-            <td data-label="Created">
-              <small class="text-gray-500">{{$feedback->created_at}}</small>
-            </td>
-            <td data-label="Created">
-              <small class="text-gray-500">{{$feedback->deleted_at}}</small>
-            </td>
+           
             @if(@empty($feedback->deleted_at))
             <td class="actions-cell">
               <div class="buttons right nowrap">

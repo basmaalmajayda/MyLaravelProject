@@ -11,11 +11,23 @@
       <form method="post" enctype="multipart/form-data" action="{{ URL::to('/storeTeam') }}">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="field">
-            <label class="label">Team</label>
+            <label class="label">Team Member Name</label>
             <div class="field-body">
               <div class="field">
                 <div class="control icons-left">
-                  <input class="input" type="text" placeholder="Team member name" name="name">
+                  <input class="input" type="text" placeholder="Team Member Name" name="name">
+                  <span class="icon left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <hr>
+          <div class="field">
+            <label class="label">Arabic Member Name</label>
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" type="text" placeholder="Arabic Member Name" name="name_ar">
                   <span class="icon left"><i class="mdi mdi-account"></i></span>
                 </div>
               </div>
@@ -34,7 +46,18 @@
             </div>
           </div>          
           <hr>
-          
+          <div class="field">
+            <label class="label">Arabic Job</label>
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" type="text" placeholder="Arabic member job" name="job_ar">
+                  <span class="icon left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <hr>
           <div class="field">
           <label class="label">Team member image</label>
           <div class="field-body">

@@ -8,17 +8,12 @@
         <div class="container">
             <div class="text-center">
                 <small style="font-size: 22px;" class="bg-primary text-white text-uppercase font-weight-bold text-center px-1">@lang('lang.ourBlog')</small>
-                <br><br><br>
+                <br><br><br><br>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-5">
                     <div class="position-relative">
                         <img class="img-fluid w-100" src= "{{ asset($blog->img) }}" alt="">
-                        <div class="position-absolute bg-primary d-flex flex-column align-items-center justify-content-center"
-                            style="width: 80px; height: 80px; bottom: 0; left: 0;">
-                            <h6 class="text-uppercase mt-2 mb-n2">Jan</h6>
-                            <h1 class="m-0">01</h1>
-                        </div>
                     </div>
                     <div class="border border-top-0" style="padding: 30px;">
                         <div class="d-flex mb-3">

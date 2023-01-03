@@ -26,6 +26,8 @@ class TeamRequest extends FormRequest
         return [
             'name' => 'required|string',
             'job' => 'required|string',
+            'name_ar' => 'required|string',
+            'job_ar' => 'required|string',
             'img' => 'required',
         ];
     }
@@ -37,6 +39,10 @@ class TeamRequest extends FormRequest
             'job.required' => 'Description is required',
             'job.string' => 'Description must be a string',
             'img.required' => 'You must upload an image',
+            'name_ar.required' => 'Arabic Name is required',
+            'name_ar.string' => 'Arabic Name must be a string',
+            'job_ar.required' => 'Arabic Description is required',
+            'job_ar.string' => 'Arabic Description must be a string',
         ];
     }
 }

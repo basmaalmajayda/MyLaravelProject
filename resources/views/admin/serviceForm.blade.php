@@ -11,7 +11,7 @@
       <form method="post" enctype="multipart/form-data" action="{{ URL::to('/storeService') }}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="field">
-            <label class="label">Service</label>
+            <label class="label">Service Name</label>
             <div class="field-body">
               <div class="field">
                 <div class="control icons-left">
@@ -23,9 +23,42 @@
           </div>          
           <hr>
           <div class="field">
+            <label class="label">Arabic Service Name</label>
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" type="text" placeholder="Arabic Service name" name="name_ar">
+                  <span class="icon left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <hr>
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Title" name="title"></textarea>
+            </div>
+          </div>
+          <hr>
+          <div class="field">
+            <label class="label">Arabic Title</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Arabic Title" name="title_ar"></textarea>
+            </div>
+          </div>
+          <hr>
+          <div class="field">
             <label class="label">Description</label>
             <div class="control">
               <textarea class="textarea" placeholder="Description" name="description"></textarea>
+            </div>
+          </div>
+          <hr>
+          <div class="field">
+            <label class="label">Arabic Description</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Arabic Description" name="description_ar"></textarea>
             </div>
           </div>
           <hr>

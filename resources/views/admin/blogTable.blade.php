@@ -24,7 +24,6 @@
             <th>Description</th>
             <th>Auther</th>
             <th class="image-cell">Auther image</th>
-            
             <th></th>
           </tr>
           </thead>

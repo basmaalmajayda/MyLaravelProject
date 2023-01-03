@@ -20,8 +20,6 @@
             <th>id</th>
             <th>Name</th>
             <th>job</th>
-            <th>Created</th>
-            <th>Deleted</th>
             <th></th>
           </tr>
           </thead>
@@ -34,12 +32,7 @@
             <td data-label="Name">{{$team->id}}</td>
             <td data-label="Name">{{$team->name}}</td>
             <td data-label="Company">{{$team->job}}</td>
-            <td data-label="Created">
-              <small class="text-gray-500">{{$team->created_at}}</small>
-            </td>
-            <td data-label="Created">
-              <small class="text-gray-500">{{$team->deleted_at}}</small>
-            </td>
+            
             @if(@empty($team->deleted_at))
             <td class="actions-cell">
               <div class="buttons right nowrap">

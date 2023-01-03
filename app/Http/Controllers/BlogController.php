@@ -39,22 +39,26 @@ class BlogController extends Controller
     	// $fileName2 = basename($path2);
     	// $blog->img_auther = $fileName2;
 
-		$filename = time().'.'.$request->img->extension();
+		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('blog_images'), $filename);
-		$blog->img = '/blog_images/' . $filename;
+		$blog->img = 'blog_images/' . $filename;
 
     	// $path2 = $request->file('auther_img')->store('public/auther_images');
     	// $fileName2 = basename($path2);
 		// $blog->img_auther = $fileName2;
 		
-		$filename = time().'.'.$request->img_auther->extension();
+		$filename = time().'_'.rand(1,10000).'.'.$request->img_auther->extension();
 		$request->img_auther->move(public_path('auther_images'), $filename);
-		$blog->img_auther = '/auther_images/' . $filename;
+		$blog->img_auther = 'auther_images/' . $filename;
 
     	$blog->title = $request->title;
+    	$blog->title_ar = $request->title_ar;
     	$blog->subject = $request->subject;
+    	$blog->subject_ar = $request->subject_ar;
         $blog->description = $request->description;
+        $blog->description_ar = $request->description_ar;
     	$blog->auther = $request->auther;
+    	$blog->auther_ar = $request->auther_ar;
 	    $status = $blog->save();
     	return redirect()->back()->with('status', $status);
     }
@@ -85,22 +89,26 @@ class BlogController extends Controller
     	// $fileName = basename($path);
 		// $blog->img = $fileName;
 
-		$filename = time().'.'.$request->img->extension();
+		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('blog_images'), $filename);
-		$blog->img = '/blog_images/' . $filename;
+		$blog->img = 'blog_images/' . $filename;
 
     	// $path2 = $request->file('auther_img')->store('public/auther_images');
     	// $fileName2 = basename($path2);
 		// $blog->img_auther = $fileName2;
 		
-		$filename = time().'.'.$request->img_auther->extension();
+		$filename = time().'_'.rand(1,10000).'.'.$request->img_auther->extension();
 		$request->img_auther->move(public_path('auther_images'), $filename);
-		$blog->img_auther = '/auther_images/' . $filename;
+		$blog->img_auther = 'auther_images/' . $filename;
 
 		$blog->title = $request->title;
+		$blog->title_ar = $request->title_ar;
     	$blog->subject = $request->subject;
+    	$blog->subject_ar = $request->subject_ar;
 		$blog->description = $request->description;
+		$blog->description_ar = $request->description_ar;
 		$blog->auther = $request->auther;
+		$blog->auther_ar = $request->auther_ar;
     	$status = $blog->save();
 		return redirect()->back()->with('status', $status);
     }

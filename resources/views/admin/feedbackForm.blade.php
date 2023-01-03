@@ -11,11 +11,23 @@
       <form method="post" enctype="multipart/form-data" action="{{ URL::to('/storeFeedback') }}">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="field">
-            <label class="label">Client</label>
+            <label class="label">Client Name</label>
             <div class="field-body">
               <div class="field">
                 <div class="control icons-left">
                   <input class="input" type="text" placeholder="Client name" name="name">
+                  <span class="icon left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <hr>
+          <div class="field">
+            <label class="label">Arabic Client Name</label>
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" type="text" placeholder="Arabic Client name" name="name_ar">
                   <span class="icon left"><i class="mdi mdi-account"></i></span>
                 </div>
               </div>
@@ -34,11 +46,29 @@
             </div>
           </div>          
           <hr>
-          
+          <div class="field">
+            <label class="label">Arabic Proffesion</label>
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" type="text" placeholder="Arabic Client profession" name="profession_ar">
+                  <span class="icon left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <hr>
           <div class="field">
             <label class="label">Message</label>
             <div class="control">
               <textarea class="textarea" placeholder="Message" name="message"></textarea>
+            </div>
+          </div>
+          <hr>
+          <div class="field">
+            <label class="label">Arabic Message</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Arabic Message" name="message_ar"></textarea>
             </div>
           </div>
           <hr>

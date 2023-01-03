@@ -35,7 +35,7 @@ return[
 
     //Service page
     'blackServicePage' => 'Most Effective Creative Service Provider For Companies',
-    'loremServicePage' => 'Eirmod est dolor nonumy sea amet dolore erat sit dolor et dolor vero. Tem amet at ipsum justo. Aiam kasd sea sit dolor duo Volup sit labore dolores erat, magna justo sed lorem kasd ea dolor. Labore sit clita invidunt, est dolores lorem sed ipsum kasd no amet ipsum.',
+    'loremServicePage' => 'Eirmod est dolor nonumy sea amet dolore erat sit dolor et dolor vero. Magna justo sed lorem kasd ea dolor. Labore sit clita invidunt, est dolores lorem sed ipsum kasd no amet ipsum.',
     'ourService' => 'Our Service',
     
     //About page

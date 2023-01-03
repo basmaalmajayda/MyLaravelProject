@@ -41,6 +41,8 @@
         </div>
     </div>
     <!-- Carousel End -->
+    
+    @include('includes.includeAbout')   
 
 <!-- Services Start -->
 <div class="container-fluid pt-5 pb-3">

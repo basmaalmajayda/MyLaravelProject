@@ -13,13 +13,17 @@
                         @foreach($feedbacks as $feedback)
                         <div class="testimonial-item">
                             <div class="testimonial-text position-relative border mb-4" style="padding: 25px 30px;">
-                            {{ $feedback->message }}
+                            {{ session()->get("locale") == "ar" ? $feedback->message_ar :  $feedback->message  }}
                             </div>
                             <div class="d-flex align-items-center">
                                 <img class="img-fluid rounded-circle" src="{{ asset($feedback->img) }}" style="width: 80px; height: 80px;" alt="Image">
                                 <div class="pl-4">
-                                    <h6 class="font-weight-bold">{{ $feedback->name }}</h6>
-                                    <i class="text-muted">{{ $feedback->profession }}</i>
+                                    <h6 class="font-weight-bold">
+                                    {{ session()->get("locale") == "ar" ? $feedback->name_ar :  $feedback->name  }}
+                                    </h6>
+                                    <i class="text-muted">
+                                    {{ session()->get("locale") == "ar" ? $feedback->profession_ar :  $feedback->profession  }}
+                                    </i>
                                 </div>
                             </div>
                         </div>

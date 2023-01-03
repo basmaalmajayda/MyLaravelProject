@@ -24,7 +24,6 @@
             <th>Subject</th>
             <th>Message</th>
             <th>Sent at</th>
-            <th>Deleted at</th>
             <th></th>
           </tr>
           </thead>
@@ -41,9 +40,6 @@
             </td>
             <td data-label="Created">
               <small class="text-gray-500">{{$contact->created_at}}</small>
-            </td>
-            <td data-label="Created">
-              <small class="text-gray-500">{{$contact->deleted_at}}</small>
             </td>
             @if(@empty($contact->deleted_at))
             <td class="actions-cell">

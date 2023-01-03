@@ -37,12 +37,16 @@ class ServiceController extends Controller
 		// $path = $request->file('img')->store('public/service_images');
     	// $fileName = basename($path);
 
-		$filename = time().'.'.$request->img->extension();
+		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('service_images'), $filename);
-		$service->img = '/service_images/' . $filename;
+		$service->img = 'service_images/' . $filename;
 
     	$service->name = $request->name;
-    	$service->description = $request->description;
+		$service->name_ar = $request->name_ar;
+    	$service->title = $request->title;
+		$service->title_ar = $request->title_ar;
+		$service->description = $request->description;
+		$service->description_ar = $request->description_ar;
     	//$service->img = $fileName;
 	    $status = $service->save();
     	return redirect()->back()->with('status', $status);
@@ -62,10 +66,10 @@ class ServiceController extends Controller
     	// $path = 'public/service_images/';
     	// $name = time().'_'.rand(1,10000).'.'.$img->getClientOriginalExtension();
     	// Storage::disk('local')->put($path.$name, file_get_contents($img));
-
-		$filename = time().'.'.$request->img->extension();
+		$service = Service::find($request->id);
+		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('service_images'), $filename);
-		$service->img = '/service_images/' . $filename;
+		$service->img = 'service_images/' . $filename;
 
 		// $service = Service::find($request->id);
 		// $path = $request->file('img')->store('public/service_images');
@@ -74,7 +78,11 @@ class ServiceController extends Controller
 
 		//$service->img = $path.$name;
 		$service->name = $request->name;
+		$service->name_ar = $request->name_ar;
+    	$service->title = $request->title;
+		$service->title_ar = $request->title_ar;
 		$service->description = $request->description;
+		$service->description_ar = $request->description_ar;
         $status = $service->save();
 		return redirect()->back()->with('status', $status);
     }

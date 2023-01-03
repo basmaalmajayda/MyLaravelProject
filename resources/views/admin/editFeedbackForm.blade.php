@@ -12,11 +12,23 @@
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <input type="hidden" name="id" value="{{ $feedback->id }}">
           <div class="field">
-            <label class="label">Client</label>
+            <label class="label">Client Name</label>
             <div class="field-body">
               <div class="field">
                 <div class="control icons-left">
                   <input class="input" type="text" name="name" value="{{ $feedback->name }}">
+                  <span class="icon left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <hr>
+          <div class="field">
+            <label class="label">Arabic Client Name</label>
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" type="text" name="name_ar" value="{{ $feedback->name_ar }}">
                   <span class="icon left"><i class="mdi mdi-account"></i></span>
                 </div>
               </div>
@@ -35,11 +47,29 @@
             </div>
           </div>          
           <hr>
-          
+          <div class="field">
+            <label class="label">Arabic Profession</label>
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" type="text" name="profession_ar" value="{{ $feedback->profession_ar }}">
+                  <span class="icon left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <hr>
           <div class="field">
             <label class="label">Message</label>
             <div class="control">
-              <textarea class="textarea" name="message" value="{{ $feedback->message }}"></textarea>
+              <textarea class="textarea" name="message" placeholder="{{ $feedback->message }}"></textarea>
+            </div>
+          </div>
+          <hr>
+          <div class="field">
+            <label class="label">Arabic Message</label>
+            <div class="control">
+              <textarea class="textarea" name="message_ar" placeholder="{{ $feedback->message_ar }}"></textarea>
             </div>
           </div>
           <hr>

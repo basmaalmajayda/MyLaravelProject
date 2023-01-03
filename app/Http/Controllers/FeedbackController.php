@@ -30,13 +30,16 @@ class FeedbackController extends Controller
     	// $fileName = basename($path);
     	// $feedback->img = $fileName;
 
-		$filename = time().'.'.$request->img->extension();
+		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('feedback_images'), $filename);
-		$feedback->img = '/feedback_images/' . $filename;
+		$feedback->img = 'feedback_images/' . $filename;
 
     	$feedback->name = $request->name;
         $feedback->profession = $request->profession;
     	$feedback->message = $request->message;
+		$feedback->name_ar = $request->name_ar;
+        $feedback->profession_ar = $request->profession_ar;
+    	$feedback->message_ar = $request->message_ar;
 	    $status = $feedback->save();
     	return redirect()->back()->with('status', $status);
     }
@@ -61,13 +64,16 @@ class FeedbackController extends Controller
     	// $fileName = basename($path);
     	// $feedback->img = $fileName;
 
-		$filename = time().'.'.$request->img->extension();
+		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('feedback_images'), $filename);
-		$feedback->img = '/feedback_images/' . $filename;
+		$feedback->img = 'feedback_images/' . $filename;
 
 		$feedback->name = $request->name;
 		$feedback->profession = $request->profession;
 		$feedback->message = $request->message;
+		$feedback->name_ar = $request->name_ar;
+        $feedback->profession_ar = $request->profession_ar;
+    	$feedback->message_ar = $request->message_ar;
     	$status = $feedback->save();
 		return redirect()->back()->with('status', $status);
     }

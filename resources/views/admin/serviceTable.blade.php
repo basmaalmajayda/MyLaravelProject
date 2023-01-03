@@ -20,9 +20,8 @@
             <th>Service image</th>
             <th>id</th>
             <th>Name</th>
+            <th>Title</th>
             <th>Description</th>
-            <th>Created</th>
-            <th>Deleted</th>
             <th></th>
           </tr>
           </thead>
@@ -34,13 +33,9 @@
             </td>
             <td data-label="Name">{{$service->id}}</td>
             <td data-label="Name">{{$service->name}}</td>
+            <td data-label="Company">{{$service->title}}</td>
             <td data-label="Company">{{$service->description}}</td>
-            <td data-label="Created">
-              <small class="text-gray-500">{{$service->created_at}}</small>
-            </td>
-            <td data-label="Created">
-              <small class="text-gray-500">{{$service->deleted_at}}</small>
-            </td>
+            
             @if(@empty($service->deleted_at))
             <td class="actions-cell">
               <div class="buttons right nowrap">

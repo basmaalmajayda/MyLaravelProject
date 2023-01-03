@@ -27,6 +27,9 @@ class FeedbackRequest extends FormRequest
             'name' => 'required|string',
             'profession' => 'required|string',
             'message' => 'required|string',
+            'name_ar' => 'required|string',
+            'profession_ar' => 'required|string',
+            'message_ar' => 'required|string',
             'img' => 'required',
         ];
     }
@@ -40,6 +43,12 @@ class FeedbackRequest extends FormRequest
             'message.required' => 'Message is required',
             'message.string' => 'Message must be a string',
             'img.required' => 'You must upload an image',
+            'name_ar.required' => 'Arabic Name is required',
+            'name_ar.string' => 'Arabic Name must be a string',
+            'profession_ar.required' => 'Arabic Profession is required',
+            'profession_ar.string' => 'Arabic Profession must be a string',
+            'message_ar.required' => 'Arabic Message is required',
+            'message_ar.string' => 'Arabic Message must be a string',
         ];
     }
 }

@@ -4,23 +4,38 @@
 @include('includes.include')
 
     <!-- Services Start -->
-    <div class="container-fluid pt-5 pb-3">
+    <div class="container-fluid pt-5">
         <div class="container">
+            <div class="text-center">
+                <small style="font-size: 22px;" class="bg-primary text-white text-uppercase font-weight-bold text-center px-1">
+                    @lang('lang.ourService')
+                </small>
+                <br><br><br><br>
+            </div>
             <div class="row">
-
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-6 text-center mb-5">
-                        <h2 class="mt-2 mb-3">@lang('lang.ourService')</h2>
+                <div class="col-md-6 mb-5">
+                    <div class="position-relative">
+                        <img style="width: 100px; hieght: 95px;" src= "{{ asset($service->img) }}" alt="">
                     </div>
-
-                    <div class="col-md-4 mb-5">
-                        <div class="d-flex">
-                            <i class="fa fa-3x text-primary mr-4"><img style="width: 60%; height: 45%;" src= "{{ asset($service->img) }}" ></i>
-                                
-                            <div class="d-flex flex-column">
-                                <h4 class="font-weight-bold mb-3">{{$service->name}}</h4>
-                                <p>{{$service->description}}</p>
+                    <div class="border border-top-0" style="padding: 30px;">
+                        <div class="d-flex mb-3">
+                            <div class="d-flex align-items-center">
+                                <a class="text-muted ml-2">
+                                {{ session()->get("locale") == "ar" ? $service->name_ar :  $service->name  }}
+                                </a>
                             </div>
+                        </div>
+                            <p class="h5 font-weight-bold" >
+                                {{ session()->get("locale") == "ar" ? $service->title_ar :  $service->title  }}
+                            </p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <div class="position-relative">
+                    </div>
+                    <div class="border" style="padding: 30px;">
+                        <div class="d-flex mb-3">
+                            <p>{{ session()->get("locale") == "ar" ? $service->description_ar :  $service->description  }}</p>
                         </div>
                     </div>
                 </div>
@@ -29,5 +44,5 @@
     </div>
     <!-- Services End -->
 
-
 @stop
+

@@ -53,7 +53,7 @@ class UserController extends Controller
     }
 
     public function searchService(Request $request){
-        $services = Service::select('*')->where('name','like', '%' . $request->name . '%' )->paginate(6);
+        $services = Service::select('*')->where('name','like', '%' . $request->name . '%' )->orWhere('name_ar','like', '%' . $request->name . '%' )->paginate(6);
     	return view('searchService')->with('services' , $services);
     }
     

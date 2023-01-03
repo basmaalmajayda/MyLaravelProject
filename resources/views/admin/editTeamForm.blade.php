@@ -10,14 +10,25 @@
       <div class="card-content">
       <form method="post" enctype="multipart/form-data" action="{{ URL::to('updateTeam') }}">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-<input type="hidden" name="id" value="{{ $team->id }}">
-
+      <input type="hidden" name="id" value="{{ $team->id }}">
           <div class="field">
-            <label class="label">Team</label>
+            <label class="label">Team Member Name</label>
             <div class="field-body">
               <div class="field">
                 <div class="control icons-left">
                   <input class="input" type="text" name="name" value="{{ $team->name }}">
+                  <span class="icon left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <hr>
+          <div class="field">
+            <label class="label">Arabic Member Name</label>
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" type="text" name="name_ar" value="{{ $team->name_ar }}">
                   <span class="icon left"><i class="mdi mdi-account"></i></span>
                 </div>
               </div>
@@ -30,6 +41,18 @@
               <div class="field">
                 <div class="control icons-left">
                   <input class="input" type="text" name="job" value="{{ $team->job }}">
+                  <span class="icon left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <hr>
+          <div class="field">
+            <label class="label">Arabic Job</label>
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" type="text" name="job_ar" value="{{ $team->job_ar }}">
                   <span class="icon left"><i class="mdi mdi-account"></i></span>
                 </div>
               </div>

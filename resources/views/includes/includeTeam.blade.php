@@ -26,8 +26,8 @@
                             </div>
                             
                             <div class="border border-top-0 text-center" style="padding: 30px;">
-                                <h5 class="font-weight-bold">{{ $team-> name}}</h5>
-                                <span>{{$team-> job}}</span>
+                                <h5 class="font-weight-bold">{{ session()->get("locale") == "ar" ? $team->name_ar :  $team->name  }}</h5>
+                                <span>{{ session()->get("locale") == "ar" ? $team->job_ar :  $team->job  }}</span>
                             </div>
                         </div>
                     @endforeach

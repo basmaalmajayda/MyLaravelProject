@@ -31,13 +31,14 @@ class TeamController extends Controller
 		// $path = $request->file('img')->store('public/team_images');
     	// $fileName = basename($path);
 
-		$filename = time().'.'.$request->img->extension();
+		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('team_images'), $filename);
-		$team->img = '/team_images/' . $filename;
+		$team->img = 'team_images/' . $filename;
 
     	$team->name = $request->name;
-    	$team->name = $request->name;
+    	$team->name_ar = $request->name_ar;
     	$team->job = $request->job;
+		$team->job_ar = $request->job_ar;
     	// $team->img = $fileName;
 	    $status = $team->save();
     	return redirect()->back()->with('status', $status);
@@ -63,12 +64,14 @@ class TeamController extends Controller
 		// $path = $request->file('img')->store('public/team_images');
     	// $fileName = basename($path);
 
-		$filename = time().'.'.$request->img->extension();
+		$filename = time().'_'.rand(1,10000).'.'.$request->img->extension();
 		$request->img->move(public_path('team_images'), $filename);
-		$team->img = '/team_images/' . $filename;
+		$team->img = 'team_images/' . $filename;
 
 		$team->name = $request->name;
-		$team->job = $request->job;
+		$team->name_ar = $request->name_ar;
+    	$team->job = $request->job;
+		$team->job_ar = $request->job_ar;
     	//$team->img = $fileName;
     	$status = $team->save();
 		return redirect()->back()->with('status', $status);
