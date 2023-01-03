@@ -34,7 +34,6 @@
             <td data-label="Name">{{$feedback->name}}</td>
             <td data-label="Company">{{$feedback->profession}}</td>
             <td data-label="Company">{{$feedback->message}}</td>
-           
             @if(@empty($feedback->deleted_at))
             <td class="actions-cell">
               <div class="buttons right nowrap">
